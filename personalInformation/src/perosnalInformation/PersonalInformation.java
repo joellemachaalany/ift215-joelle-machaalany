@@ -6,6 +6,8 @@
 
 package perosnalInformation;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -33,7 +35,7 @@ public class PersonalInformation extends javax.swing.JFrame {
         lblTitle = new javax.swing.JLabel();
         cbxTitle = new javax.swing.JComboBox();
         lblFirstName = new javax.swing.JLabel();
-        txtFieldName = new javax.swing.JTextField();
+        txtFirstName = new javax.swing.JTextField();
         lblLastName = new javax.swing.JLabel();
         txtLastName = new javax.swing.JTextField();
         lblGender = new javax.swing.JLabel();
@@ -43,7 +45,7 @@ public class PersonalInformation extends javax.swing.JFrame {
         txtDay = new javax.swing.JTextField();
         lblDay = new javax.swing.JLabel();
         txtMonth = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        lblMonth = new javax.swing.JLabel();
         txtYear = new javax.swing.JTextField();
         lblYear = new javax.swing.JLabel();
         lblNationality = new javax.swing.JLabel();
@@ -84,7 +86,7 @@ public class PersonalInformation extends javax.swing.JFrame {
 
         lblDay.setText("(Day)");
 
-        jLabel1.setText("(Month)");
+        lblMonth.setText("(Month)");
 
         lblYear.setText("(Year)");
 
@@ -93,6 +95,11 @@ public class PersonalInformation extends javax.swing.JFrame {
         lblOccupation.setText("Occupation:");
 
         btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlDetailsLayout = new javax.swing.GroupLayout(pnlDetails);
         pnlDetails.setLayout(pnlDetailsLayout);
@@ -115,7 +122,7 @@ public class PersonalInformation extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(btnFemale))
                                     .addGroup(pnlDetailsLayout.createSequentialGroup()
-                                        .addComponent(txtFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(lblLastName)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -135,7 +142,7 @@ public class PersonalInformation extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)
+                        .addComponent(lblMonth)
                         .addGap(18, 18, 18)
                         .addComponent(txtYear, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -166,7 +173,7 @@ public class PersonalInformation extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblFirstName)
-                    .addComponent(txtFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblLastName)
                     .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -180,7 +187,7 @@ public class PersonalInformation extends javax.swing.JFrame {
                     .addComponent(txtDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblDay)
                     .addComponent(txtMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
+                    .addComponent(lblMonth)
                     .addComponent(txtYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblYear))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -236,7 +243,54 @@ public class PersonalInformation extends javax.swing.JFrame {
 
     private void btnMaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaleActionPerformed
         // TODO add your handling code here:
+           
     }//GEN-LAST:event_btnMaleActionPerformed
+
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+        // TODO add your handling code here:
+        
+        if(txtFirstName.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(this,"Please enter your First Name","Warning",JOptionPane.INFORMATION_MESSAGE);
+        }
+        
+        else if (txtLastName.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(this,"Please enter your Last Name","Warning",JOptionPane.INFORMATION_MESSAGE);
+        }
+        
+        else if ((txtDay.getText().trim().equals(""))||(txtMonth.getText().trim().equals(""))||(txtYear.getText().trim().equals(""))){
+            JOptionPane.showMessageDialog(this,"Please fill into your Date Of Birth","Warning",JOptionPane.INFORMATION_MESSAGE);
+        }
+        
+        else if (txtNationality.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(this,"Please enter your Nationality","Warning",JOptionPane.INFORMATION_MESSAGE);
+        }
+        
+        else{
+            String title= cbxTitle.getSelectedItem().toString();
+            
+            String firstName= txtFirstName.getText();
+            
+            String lastName= txtLastName.getText();
+            
+            String gender;
+            if(btnMale.isSelected()){
+                gender="Male";
+            }
+            else {
+                gender="Female";
+            }
+            
+            int dateOfBirth;
+            
+            String nationality= txtNationality.getText();
+            
+            String occupation= txtOccupation.getText();
+            
+            PersonalInformation pi=
+                    new PersonalInformation(title,firstName,lastName,gender,dateOfBirth,nationality,occupation);
+            txtPersonalInformation.setText(pi.getPersonalInformation());
+        }
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,12 +332,12 @@ public class PersonalInformation extends javax.swing.JFrame {
     private javax.swing.JRadioButton btnMale;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JComboBox cbxTitle;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblDOB;
     private javax.swing.JLabel lblDay;
     private javax.swing.JLabel lblFirstName;
     private javax.swing.JLabel lblGender;
     private javax.swing.JLabel lblLastName;
+    private javax.swing.JLabel lblMonth;
     private javax.swing.JLabel lblNationality;
     private javax.swing.JLabel lblOccupation;
     private javax.swing.JLabel lblTitle;
@@ -292,7 +346,7 @@ public class PersonalInformation extends javax.swing.JFrame {
     private javax.swing.JPanel pnlPersonalInformation;
     private javax.swing.ButtonGroup rbnGender;
     private javax.swing.JTextField txtDay;
-    private javax.swing.JTextField txtFieldName;
+    private javax.swing.JTextField txtFirstName;
     private javax.swing.JTextField txtLastName;
     private javax.swing.JTextField txtMonth;
     private javax.swing.JTextField txtNationality;

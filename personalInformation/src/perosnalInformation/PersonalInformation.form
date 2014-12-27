@@ -82,7 +82,7 @@
                                           <Component id="btnFemale" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
-                                          <Component id="txtFieldName" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="txtFirstName" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="lblLastName" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -108,7 +108,7 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="txtMonth" min="-2" pref="31" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblMonth" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="txtYear" min="-2" pref="50" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -147,7 +147,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblFirstName" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtFieldName" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtFirstName" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblLastName" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtLastName" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -163,7 +163,7 @@
                       <Component id="txtDay" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblDay" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtMonth" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblMonth" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtYear" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblYear" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -204,7 +204,7 @@
             <Property name="text" type="java.lang.String" value="First Name:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtFieldName">
+        <Component class="javax.swing.JTextField" name="txtFirstName">
         </Component>
         <Component class="javax.swing.JLabel" name="lblLastName">
           <Properties>
@@ -251,7 +251,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtMonth">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="lblMonth">
           <Properties>
             <Property name="text" type="java.lang.String" value="(Month)"/>
           </Properties>
@@ -281,6 +281,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Submit"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSubmitActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
