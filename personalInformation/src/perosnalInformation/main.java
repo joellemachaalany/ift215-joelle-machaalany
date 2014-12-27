@@ -71,20 +71,32 @@ public class main {
     }
     
     public String getGen(){
-        int gen;
+        String gen;
          if(title=="Male"){
-             
+             gen="man";
          }  
+         else{
+             gen="woman";
+         }
           
         return gen;
+    }
+    
+    public int getAge(){
+        int age;
+        age=2014-dateOfBirth;
+        return age;
     }
     
     public String getPersonalInformation(){
         String personalInformation;
         
-        personalInformation="Hi," + "/n I am "+ title + " "+ firstName + " " +lastName
-                +"." + "/n I am a "+ getAge()+ " years old " + getGen()+ " from " + 
-                nationality + "." + "/n I work as a " + occupation ;
+        personalInformation="Hi,";
+        personalInformation+="I am "+ title + " "+ firstName + " " +lastName
+                +".";
+        personalInformation+="I am a "+ getAge()+ " years old " + getGen()+ " from " + 
+                nationality + ".";
+        personalInformation+="I work as a " + occupation ;
         return personalInformation;
   
     }

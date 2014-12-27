@@ -19,6 +19,11 @@ public class PersonalInformation extends javax.swing.JFrame {
      */
     public PersonalInformation() {
         initComponents();
+        this.setLocationRelativeTo(this);
+        btnMale.setSelected(true);
+        rootPane.setDefaultButton(btnSubmit);
+        this.setTitle("Personal Information");
+        
     }
 
     /**
@@ -54,7 +59,8 @@ public class PersonalInformation extends javax.swing.JFrame {
         txtOccupation = new javax.swing.JTextField();
         btnSubmit = new javax.swing.JButton();
         pnlPersonalInformation = new javax.swing.JPanel();
-        txtPersonalInformation = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtPersonalInformation = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Personal Information");
@@ -205,16 +211,20 @@ public class PersonalInformation extends javax.swing.JFrame {
         pnlPersonalInformation.setBorder(javax.swing.BorderFactory.createTitledBorder("Personal Information"));
 
         txtPersonalInformation.setEditable(false);
+        txtPersonalInformation.setColumns(20);
+        txtPersonalInformation.setLineWrap(true);
+        txtPersonalInformation.setRows(5);
+        jScrollPane1.setViewportView(txtPersonalInformation);
 
         javax.swing.GroupLayout pnlPersonalInformationLayout = new javax.swing.GroupLayout(pnlPersonalInformation);
         pnlPersonalInformation.setLayout(pnlPersonalInformationLayout);
         pnlPersonalInformationLayout.setHorizontalGroup(
             pnlPersonalInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtPersonalInformation)
+            .addComponent(jScrollPane1)
         );
         pnlPersonalInformationLayout.setVerticalGroup(
             pnlPersonalInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtPersonalInformation, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -280,15 +290,15 @@ public class PersonalInformation extends javax.swing.JFrame {
                 gender="Female";
             }
             
-            int dateOfBirth;
+            int dateOfBirth= Integer.parseInt(txtYear.getText().toString());
             
             String nationality= txtNationality.getText();
             
             String occupation= txtOccupation.getText();
             
-            PersonalInformation pi=
-                    new PersonalInformation(title,firstName,lastName,gender,dateOfBirth,nationality,occupation);
-            txtPersonalInformation.setText(pi.getPersonalInformation());
+            main m =
+                    new main(title,firstName,lastName,gender,dateOfBirth,nationality,occupation);
+            txtPersonalInformation.setText(m.getPersonalInformation());
         }
     }//GEN-LAST:event_btnSubmitActionPerformed
 
@@ -332,6 +342,7 @@ public class PersonalInformation extends javax.swing.JFrame {
     private javax.swing.JRadioButton btnMale;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JComboBox cbxTitle;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblDOB;
     private javax.swing.JLabel lblDay;
     private javax.swing.JLabel lblFirstName;
@@ -351,7 +362,7 @@ public class PersonalInformation extends javax.swing.JFrame {
     private javax.swing.JTextField txtMonth;
     private javax.swing.JTextField txtNationality;
     private javax.swing.JTextField txtOccupation;
-    private javax.swing.JTextField txtPersonalInformation;
+    private javax.swing.JTextArea txtPersonalInformation;
     private javax.swing.JTextField txtYear;
     // End of variables declaration//GEN-END:variables
 }
