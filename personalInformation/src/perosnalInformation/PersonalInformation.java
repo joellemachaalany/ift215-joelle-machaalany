@@ -4,18 +4,18 @@
  * and open the template in the editor.
  */
 
-package PersonalInformation;
+package perosnalInformation;
 
 /**
  *
- * @author machaalany
+ * @author user
  */
-public class Personal_Information extends javax.swing.JFrame {
+public class PersonalInformation extends javax.swing.JFrame {
 
     /**
-     * Creates new form Personal_Information
+     * Creates new form PersonalInformation
      */
-    public Personal_Information() {
+    public PersonalInformation() {
         initComponents();
     }
 
@@ -28,29 +28,31 @@ public class Personal_Information extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        rbgGender = new javax.swing.ButtonGroup();
+        rbnGender = new javax.swing.ButtonGroup();
         pnlDetails = new javax.swing.JPanel();
         lblTitle = new javax.swing.JLabel();
         cbxTitle = new javax.swing.JComboBox();
         lblFirstName = new javax.swing.JLabel();
-        txtFirstName = new javax.swing.JTextField();
+        txtFieldName = new javax.swing.JTextField();
         lblLastName = new javax.swing.JLabel();
         txtLastName = new javax.swing.JTextField();
         lblGender = new javax.swing.JLabel();
-        rbMale = new javax.swing.JRadioButton();
-        rbFemale = new javax.swing.JRadioButton();
-        lblDateOfBirth = new javax.swing.JLabel();
+        btnMale = new javax.swing.JRadioButton();
+        btnFemale = new javax.swing.JRadioButton();
+        lblDOB = new javax.swing.JLabel();
         txtDay = new javax.swing.JTextField();
-        txtMonth = new javax.swing.JTextField();
         lblDay = new javax.swing.JLabel();
-        lblMonth = new javax.swing.JLabel();
-        txtYear = new javax.swing.JTextField();
+        txtMonth = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        txtYear = new javax.swing.JTextField();
+        lblYear = new javax.swing.JLabel();
         lblNationality = new javax.swing.JLabel();
         txtNationality = new javax.swing.JTextField();
         lblOccupation = new javax.swing.JLabel();
         txtOccupation = new javax.swing.JTextField();
         btnSubmit = new javax.swing.JButton();
+        pnlPersonalInformation = new javax.swing.JPanel();
+        txtPersonalInformation = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Personal Information");
@@ -63,46 +65,28 @@ public class Personal_Information extends javax.swing.JFrame {
 
         lblFirstName.setText("First Name:");
 
-        txtFirstName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFirstNameActionPerformed(evt);
-            }
-        });
-
         lblLastName.setText("Last Name:");
 
         lblGender.setText("Gender:");
 
-        rbgGender.add(rbMale);
-        rbMale.setText("Male");
-        rbMale.addActionListener(new java.awt.event.ActionListener() {
+        rbnGender.add(btnMale);
+        btnMale.setText("Male");
+        btnMale.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbMaleActionPerformed(evt);
+                btnMaleActionPerformed(evt);
             }
         });
 
-        rbgGender.add(rbFemale);
-        rbFemale.setText("Female");
+        rbnGender.add(btnFemale);
+        btnFemale.setText("Female");
 
-        lblDateOfBirth.setText("Date Of Birth:");
-
-        txtMonth.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMonthActionPerformed(evt);
-            }
-        });
+        lblDOB.setText("Date Of Birth:");
 
         lblDay.setText("(Day)");
 
-        lblMonth.setText("(Month)");
+        jLabel1.setText("(Month)");
 
-        txtYear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtYearActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("(Year)");
+        lblYear.setText("(Year)");
 
         lblNationality.setText("Nationality:");
 
@@ -118,51 +102,58 @@ public class Personal_Information extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pnlDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlDetailsLayout.createSequentialGroup()
-                        .addComponent(lblFirstName)
+                        .addGroup(pnlDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlDetailsLayout.createSequentialGroup()
+                                .addGroup(pnlDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblFirstName)
+                                    .addComponent(lblGender))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(pnlDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlDetailsLayout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(btnMale)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnFemale))
+                                    .addGroup(pnlDetailsLayout.createSequentialGroup()
+                                        .addComponent(txtFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblLastName)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtLastName))
+                            .addGroup(pnlDetailsLayout.createSequentialGroup()
+                                .addComponent(lblTitle)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbxTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(pnlDetailsLayout.createSequentialGroup()
+                        .addComponent(lblDOB)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(lblLastName)
+                        .addComponent(txtDay, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblDay)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtLastName))
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtYear, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblYear)
+                        .addGap(26, 26, 26))
                     .addGroup(pnlDetailsLayout.createSequentialGroup()
                         .addComponent(lblNationality)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNationality))
-                    .addGroup(pnlDetailsLayout.createSequentialGroup()
-                        .addGroup(pnlDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlDetailsLayout.createSequentialGroup()
-                                .addComponent(lblTitle)
-                                .addGap(18, 18, 18)
-                                .addComponent(cbxTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlDetailsLayout.createSequentialGroup()
-                                .addComponent(lblGender)
-                                .addGap(18, 18, 18)
-                                .addComponent(rbMale)
-                                .addGap(10, 10, 10)
-                                .addComponent(rbFemale))
-                            .addGroup(pnlDetailsLayout.createSequentialGroup()
-                                .addComponent(lblDateOfBirth)
-                                .addGap(5, 5, 5)
-                                .addComponent(txtDay, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblDay)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblMonth)
-                                .addGap(21, 21, 21)
-                                .addComponent(txtYear, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel1)))
-                        .addGap(0, 32, Short.MAX_VALUE))
+                        .addComponent(txtNationality)
+                        .addContainerGap())
                     .addGroup(pnlDetailsLayout.createSequentialGroup()
                         .addComponent(lblOccupation)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtOccupation))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDetailsLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnSubmit)))
+                        .addComponent(txtOccupation)
+                        .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDetailsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSubmit)
                 .addContainerGap())
         );
         pnlDetailsLayout.setVerticalGroup(
@@ -175,23 +166,23 @@ public class Personal_Information extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblFirstName)
-                    .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblLastName)
                     .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblGender)
-                    .addComponent(rbMale)
-                    .addComponent(rbFemale))
+                    .addComponent(btnMale)
+                    .addComponent(btnFemale))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDateOfBirth)
+                    .addComponent(lblDOB)
                     .addComponent(txtDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblDay)
-                    .addComponent(lblMonth)
+                    .addComponent(txtMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
                     .addComponent(txtYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(lblYear))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNationality)
@@ -200,45 +191,52 @@ public class Personal_Information extends javax.swing.JFrame {
                 .addGroup(pnlDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblOccupation)
                     .addComponent(txtOccupation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSubmit)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSubmit))
+        );
+
+        pnlPersonalInformation.setBorder(javax.swing.BorderFactory.createTitledBorder("Personal Information"));
+
+        txtPersonalInformation.setEditable(false);
+
+        javax.swing.GroupLayout pnlPersonalInformationLayout = new javax.swing.GroupLayout(pnlPersonalInformation);
+        pnlPersonalInformation.setLayout(pnlPersonalInformationLayout);
+        pnlPersonalInformationLayout.setHorizontalGroup(
+            pnlPersonalInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txtPersonalInformation)
+        );
+        pnlPersonalInformationLayout.setVerticalGroup(
+            pnlPersonalInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txtPersonalInformation, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pnlDetails, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnlDetails, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlPersonalInformation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(pnlDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 81, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlPersonalInformation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFirstNameActionPerformed
+    private void btnMaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFirstNameActionPerformed
-
-    private void rbMaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbMaleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rbMaleActionPerformed
-
-    private void txtYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtYearActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtYearActionPerformed
-
-    private void txtMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMonthActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMonthActionPerformed
+    }//GEN-LAST:event_btnMaleActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,47 +255,49 @@ public class Personal_Information extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Personal_Information.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PersonalInformation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Personal_Information.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PersonalInformation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Personal_Information.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PersonalInformation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Personal_Information.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PersonalInformation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Personal_Information().setVisible(true);
+                new PersonalInformation().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton btnFemale;
+    private javax.swing.JRadioButton btnMale;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JComboBox cbxTitle;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel lblDateOfBirth;
+    private javax.swing.JLabel lblDOB;
     private javax.swing.JLabel lblDay;
     private javax.swing.JLabel lblFirstName;
     private javax.swing.JLabel lblGender;
     private javax.swing.JLabel lblLastName;
-    private javax.swing.JLabel lblMonth;
     private javax.swing.JLabel lblNationality;
     private javax.swing.JLabel lblOccupation;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblYear;
     private javax.swing.JPanel pnlDetails;
-    private javax.swing.JRadioButton rbFemale;
-    private javax.swing.JRadioButton rbMale;
-    private javax.swing.ButtonGroup rbgGender;
+    private javax.swing.JPanel pnlPersonalInformation;
+    private javax.swing.ButtonGroup rbnGender;
     private javax.swing.JTextField txtDay;
-    private javax.swing.JTextField txtFirstName;
+    private javax.swing.JTextField txtFieldName;
     private javax.swing.JTextField txtLastName;
     private javax.swing.JTextField txtMonth;
     private javax.swing.JTextField txtNationality;
     private javax.swing.JTextField txtOccupation;
+    private javax.swing.JTextField txtPersonalInformation;
     private javax.swing.JTextField txtYear;
     // End of variables declaration//GEN-END:variables
 }
