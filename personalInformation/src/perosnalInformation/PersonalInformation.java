@@ -314,7 +314,24 @@ public class PersonalInformation extends javax.swing.JFrame {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-        
+        int value = Integer.parseInt(txtDay.getText().trim());
+        if ((value > 1) && (value < 31)) {
+            txtDay.getText();
+        } else {
+            JOptionPane.showMessageDialog(this, "Please enter a day number between 1 and 31", "Warning", JOptionPane.INFORMATION_MESSAGE);
+        }
+        int val = Integer.parseInt(txtMonth.getText().trim());
+        if ((val > 1) && (val < 12)) {
+            txtMonth.getText();
+        } else {
+            JOptionPane.showMessageDialog(this, "Please enter a month number between 1 and 12", "Warning", JOptionPane.INFORMATION_MESSAGE);
+        }
+        int value1 = Integer.parseInt(txtYear.getText().trim());
+        if ((value1 > 1900) && (value1 < 2100)) {
+            txtYear.getText();
+        } else {
+            JOptionPane.showMessageDialog(this, "Please enter a year number between 1900 and 2100", "Warning", JOptionPane.INFORMATION_MESSAGE);
+        }
         if (txtFirstName.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "Please enter your First Name", "Warning", JOptionPane.INFORMATION_MESSAGE);
         } else if (txtLastName.getText().trim().equals("")) {
@@ -363,71 +380,78 @@ public class PersonalInformation extends javax.swing.JFrame {
 
     private void txtDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDayActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_txtDayActionPerformed
 
     private void txtFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFirstNameActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_txtFirstNameActionPerformed
 
     private void txtDayKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDayKeyTyped
         // TODO add your handling code here:
-        if(txtDay.getText().length()>=2){
+        if (txtDay.getText().length() >= 2) {
             evt.consume();
         }
-        char ch=evt.getKeyChar();
-        if (!(Character.isDigit(ch))){
-            evt.consume();}
-                  
+        char ch = evt.getKeyChar();
+        if (!(Character.isDigit(ch))) {
+            evt.consume();
+        }
+
     }//GEN-LAST:event_txtDayKeyTyped
 
     private void txtMonthKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMonthKeyTyped
         // TODO add your handling code here:
-        if(txtMonth.getText().length()>=2){
+        if (txtMonth.getText().length() >= 2) {
             evt.consume();
         }
-        char ch=evt.getKeyChar();
-        if (!(Character.isDigit(ch))){
-            evt.consume();}
+        char ch = evt.getKeyChar();
+        if (!(Character.isDigit(ch))) {
+            evt.consume();
+        }
     }//GEN-LAST:event_txtMonthKeyTyped
 
     private void txtYearKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtYearKeyTyped
         // TODO add your handling code here:
-        if(txtYear.getText().length()>=4){
+        if (txtYear.getText().length() >= 4) {
             evt.consume();
         }
-        char ch=evt.getKeyChar();
-        if (!(Character.isDigit(ch))){
-            evt.consume();}
+        char ch = evt.getKeyChar();
+        if (!(Character.isDigit(ch))) {
+            evt.consume();
+        }
     }//GEN-LAST:event_txtYearKeyTyped
 
     private void txtFirstNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFirstNameKeyTyped
         // TODO add your handling code here:
-       char ch=evt.getKeyChar();
-        if (Character.isDigit(ch)){
-            evt.consume();}
+        char ch = evt.getKeyChar();
+        if (Character.isDigit(ch)) {
+            evt.consume();
+        }
     }//GEN-LAST:event_txtFirstNameKeyTyped
 
     private void txtLastNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLastNameKeyTyped
         // TODO add your handling code here:
-        char ch=evt.getKeyChar();
-        if (Character.isDigit(ch)){
-            evt.consume();}
+        char ch = evt.getKeyChar();
+        if (Character.isDigit(ch)) {
+            evt.consume();
+        }
     }//GEN-LAST:event_txtLastNameKeyTyped
 
     private void txtNationalityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNationalityKeyTyped
         // TODO add your handling code here:
-        char ch=evt.getKeyChar();
-        if (Character.isDigit(ch)){
-            evt.consume();}
+        char ch = evt.getKeyChar();
+        if (Character.isDigit(ch)) {
+            evt.consume();
+        }
     }//GEN-LAST:event_txtNationalityKeyTyped
 
     private void txtOccupationKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtOccupationKeyTyped
         // TODO add your handling code here:
-        char ch=evt.getKeyChar();
-        if (Character.isDigit(ch)){
-            evt.consume();}
+        char ch = evt.getKeyChar();
+        if (Character.isDigit(ch)) {
+            evt.consume();
+        }
     }//GEN-LAST:event_txtOccupationKeyTyped
 
     public void changeGender(String title) {
