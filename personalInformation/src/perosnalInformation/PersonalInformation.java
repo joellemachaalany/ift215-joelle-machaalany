@@ -74,6 +74,11 @@ public class PersonalInformation extends javax.swing.JFrame {
                 cbxTitleActionPerformed(evt);
             }
         });
+        cbxTitle.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                cbxTitleKeyPressed(evt);
+            }
+        });
 
         lblFirstName.setText("First Name:");
 
@@ -198,8 +203,8 @@ public class PersonalInformation extends javax.swing.JFrame {
                     .addGroup(pnlDetailsLayout.createSequentialGroup()
                         .addComponent(lblDOB)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDay, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtDay, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblDay)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -211,15 +216,17 @@ public class PersonalInformation extends javax.swing.JFrame {
                         .addComponent(lblYear)
                         .addGap(26, 26, 26))
                     .addGroup(pnlDetailsLayout.createSequentialGroup()
-                        .addComponent(lblNationality)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNationality)
-                        .addContainerGap())
-                    .addGroup(pnlDetailsLayout.createSequentialGroup()
-                        .addComponent(lblOccupation)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtOccupation)
-                        .addContainerGap())))
+                        .addGroup(pnlDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDetailsLayout.createSequentialGroup()
+                                .addComponent(lblOccupation)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(pnlDetailsLayout.createSequentialGroup()
+                                .addComponent(lblNationality)
+                                .addGap(7, 7, 7)))
+                        .addGroup(pnlDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txtNationality, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                            .addComponent(txtOccupation))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDetailsLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSubmit)
@@ -276,7 +283,7 @@ public class PersonalInformation extends javax.swing.JFrame {
         pnlPersonalInformation.setLayout(pnlPersonalInformationLayout);
         pnlPersonalInformationLayout.setHorizontalGroup(
             pnlPersonalInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
         );
         pnlPersonalInformationLayout.setVerticalGroup(
             pnlPersonalInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -318,19 +325,19 @@ public class PersonalInformation extends javax.swing.JFrame {
         if ((value > 1) && (value < 31)) {
             txtDay.getText();
         } else {
-            JOptionPane.showMessageDialog(this, "Please enter a day number between 1 and 31", "Warning", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Please enter a day number between 1 and 31", "Error", JOptionPane.ERROR_MESSAGE);
         }
         int val = Integer.parseInt(txtMonth.getText().trim());
         if ((val > 1) && (val < 12)) {
             txtMonth.getText();
         } else {
-            JOptionPane.showMessageDialog(this, "Please enter a month number between 1 and 12", "Warning", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Please enter a month number between 1 and 12", "Error", JOptionPane.ERROR_MESSAGE);
         }
         int value1 = Integer.parseInt(txtYear.getText().trim());
         if ((value1 > 1900) && (value1 < 2100)) {
             txtYear.getText();
         } else {
-            JOptionPane.showMessageDialog(this, "Please enter a year number between 1900 and 2100", "Warning", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Please enter a year number between 1900 and 2100", "Error", JOptionPane.ERROR_MESSAGE);
         }
         if (txtFirstName.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "Please enter your First Name", "Warning", JOptionPane.INFORMATION_MESSAGE);
@@ -368,12 +375,13 @@ public class PersonalInformation extends javax.swing.JFrame {
 
     private void cbxTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxTitleActionPerformed
         // TODO add your handling code here:
-        if (cbxTitle.toString().equals("Mr.")) {
+       
+       
+        if (cbxTitle.getSelectedItem().equals("Mr.")) {
             rbMale.isSelected();
-
         }
 
-        if (cbxTitle.toString().equals("Mrs.")) {
+        else {
             rbFemale.isSelected();
         }
     }//GEN-LAST:event_cbxTitleActionPerformed
@@ -453,6 +461,18 @@ public class PersonalInformation extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_txtOccupationKeyTyped
+
+    private void cbxTitleKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cbxTitleKeyPressed
+        // TODO add your handling code here:
+        if (cbxTitle.toString().equals("Mr.")) {
+            rbMale.isSelected();
+
+        }
+
+        if (cbxTitle.toString().equals("Mrs.")) {
+            rbFemale.isSelected();
+        }
+    }//GEN-LAST:event_cbxTitleKeyPressed
 
     public void changeGender(String title) {
         switch (title) {
