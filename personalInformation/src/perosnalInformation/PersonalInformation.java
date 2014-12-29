@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package perosnalInformation;
 
 import javax.swing.JOptionPane;
@@ -20,10 +19,10 @@ public class PersonalInformation extends javax.swing.JFrame {
     public PersonalInformation() {
         initComponents();
         this.setLocationRelativeTo(this);
-        btnMale.setSelected(true);
+        rbMale.setSelected(true);
         rootPane.setDefaultButton(btnSubmit);
         this.setTitle("Personal Information");
-        
+
     }
 
     /**
@@ -44,8 +43,8 @@ public class PersonalInformation extends javax.swing.JFrame {
         lblLastName = new javax.swing.JLabel();
         txtLastName = new javax.swing.JTextField();
         lblGender = new javax.swing.JLabel();
-        btnMale = new javax.swing.JRadioButton();
-        btnFemale = new javax.swing.JRadioButton();
+        rbMale = new javax.swing.JRadioButton();
+        rbFemale = new javax.swing.JRadioButton();
         lblDOB = new javax.swing.JLabel();
         txtDay = new javax.swing.JTextField();
         lblDay = new javax.swing.JLabel();
@@ -70,35 +69,92 @@ public class PersonalInformation extends javax.swing.JFrame {
         lblTitle.setText("Title:");
 
         cbxTitle.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mr.", "Mrs." }));
-
-        lblFirstName.setText("First Name:");
-
-        lblLastName.setText("Last Name:");
-
-        lblGender.setText("Gender:");
-
-        rbnGender.add(btnMale);
-        btnMale.setText("Male");
-        btnMale.addActionListener(new java.awt.event.ActionListener() {
+        cbxTitle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMaleActionPerformed(evt);
+                cbxTitleActionPerformed(evt);
             }
         });
 
-        rbnGender.add(btnFemale);
-        btnFemale.setText("Female");
+        lblFirstName.setText("First Name:");
+
+        txtFirstName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFirstNameActionPerformed(evt);
+            }
+        });
+        txtFirstName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtFirstNameKeyTyped(evt);
+            }
+        });
+
+        lblLastName.setText("Last Name:");
+
+        txtLastName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtLastNameKeyTyped(evt);
+            }
+        });
+
+        lblGender.setText("Gender:");
+
+        rbnGender.add(rbMale);
+        rbMale.setText("Male");
+        rbMale.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbMaleActionPerformed(evt);
+            }
+        });
+
+        rbnGender.add(rbFemale);
+        rbFemale.setText("Female");
 
         lblDOB.setText("Date Of Birth:");
 
+        txtDay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDayActionPerformed(evt);
+            }
+        });
+        txtDay.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDayKeyTyped(evt);
+            }
+        });
+
         lblDay.setText("(Day)");
 
+        txtMonth.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtMonthKeyTyped(evt);
+            }
+        });
+
         lblMonth.setText("(Month)");
+
+        txtYear.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtYearKeyTyped(evt);
+            }
+        });
 
         lblYear.setText("(Year)");
 
         lblNationality.setText("Nationality:");
 
+        txtNationality.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNationalityKeyTyped(evt);
+            }
+        });
+
         lblOccupation.setText("Occupation:");
+
+        txtOccupation.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtOccupationKeyTyped(evt);
+            }
+        });
 
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -124,9 +180,9 @@ public class PersonalInformation extends javax.swing.JFrame {
                                 .addGroup(pnlDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(pnlDetailsLayout.createSequentialGroup()
                                         .addGap(10, 10, 10)
-                                        .addComponent(btnMale)
+                                        .addComponent(rbMale)
                                         .addGap(18, 18, 18)
-                                        .addComponent(btnFemale))
+                                        .addComponent(rbFemale))
                                     .addGroup(pnlDetailsLayout.createSequentialGroup()
                                         .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -185,8 +241,8 @@ public class PersonalInformation extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblGender)
-                    .addComponent(btnMale)
-                    .addComponent(btnFemale))
+                    .addComponent(rbMale)
+                    .addComponent(rbFemale))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDOB)
@@ -220,11 +276,11 @@ public class PersonalInformation extends javax.swing.JFrame {
         pnlPersonalInformation.setLayout(pnlPersonalInformationLayout);
         pnlPersonalInformationLayout.setHorizontalGroup(
             pnlPersonalInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
         );
         pnlPersonalInformationLayout.setVerticalGroup(
             pnlPersonalInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -251,56 +307,139 @@ public class PersonalInformation extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnMaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaleActionPerformed
+    private void rbMaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbMaleActionPerformed
         // TODO add your handling code here:
-           
-    }//GEN-LAST:event_btnMaleActionPerformed
+
+    }//GEN-LAST:event_rbMaleActionPerformed
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
         
-        if(txtFirstName.getText().trim().equals("")){
-            JOptionPane.showMessageDialog(this,"Please enter your First Name","Warning",JOptionPane.INFORMATION_MESSAGE);
-        }
-        
-        else if (txtLastName.getText().trim().equals("")){
-            JOptionPane.showMessageDialog(this,"Please enter your Last Name","Warning",JOptionPane.INFORMATION_MESSAGE);
-        }
-        
-        else if ((txtDay.getText().trim().equals(""))||(txtMonth.getText().trim().equals(""))||(txtYear.getText().trim().equals(""))){
-            JOptionPane.showMessageDialog(this,"Please fill into your Date Of Birth","Warning",JOptionPane.INFORMATION_MESSAGE);
-        }
-        
-        else if (txtNationality.getText().trim().equals("")){
-            JOptionPane.showMessageDialog(this,"Please enter your Nationality","Warning",JOptionPane.INFORMATION_MESSAGE);
-        }
-        
-        else{
-            String title= cbxTitle.getSelectedItem().toString();
-            
-            String firstName= txtFirstName.getText();
-            
-            String lastName= txtLastName.getText();
-            
+        if (txtFirstName.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(this, "Please enter your First Name", "Warning", JOptionPane.INFORMATION_MESSAGE);
+        } else if (txtLastName.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(this, "Please enter your Last Name", "Warning", JOptionPane.INFORMATION_MESSAGE);
+        } else if ((txtDay.getText().trim().equals("")) || (txtMonth.getText().trim().equals("")) || (txtYear.getText().trim().equals(""))) {
+            JOptionPane.showMessageDialog(this, "Please fill into your Date Of Birth", "Warning", JOptionPane.INFORMATION_MESSAGE);
+        } else if (txtNationality.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(this, "Please enter your Nationality", "Warning", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            String title = cbxTitle.getSelectedItem().toString();
+
+            String firstName = txtFirstName.getText();
+
+            String lastName = txtLastName.getText();
+
             String gender;
-            if(btnMale.isSelected()){
-                gender="Male";
+            if (rbMale.isSelected()) {
+                gender = "Male";
+            } else {
+                gender = "Female";
             }
-            else {
-                gender="Female";
-            }
-            
-            int dateOfBirth= Integer.parseInt(txtYear.getText().toString());
-            
-            String nationality= txtNationality.getText();
-            
-            String occupation= txtOccupation.getText();
-            
-            main m =
-                    new main(title,firstName,lastName,gender,dateOfBirth,nationality,occupation);
+
+            int dateOfBirth = Integer.parseInt(txtYear.getText().toString());
+
+            String nationality = txtNationality.getText();
+
+            String occupation = txtOccupation.getText();
+
+            main m
+                    = new main(title, firstName, lastName, gender, dateOfBirth, nationality, occupation);
             txtPersonalInformation.setText(m.getPersonalInformation());
         }
     }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void cbxTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxTitleActionPerformed
+        // TODO add your handling code here:
+        if (cbxTitle.toString().equals("Mr.")) {
+            rbMale.isSelected();
+
+        }
+
+        if (cbxTitle.toString().equals("Mrs.")) {
+            rbFemale.isSelected();
+        }
+    }//GEN-LAST:event_cbxTitleActionPerformed
+
+    private void txtDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDayActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_txtDayActionPerformed
+
+    private void txtFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFirstNameActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_txtFirstNameActionPerformed
+
+    private void txtDayKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDayKeyTyped
+        // TODO add your handling code here:
+        if(txtDay.getText().length()>=2){
+            evt.consume();
+        }
+        char ch=evt.getKeyChar();
+        if (!(Character.isDigit(ch))){
+            evt.consume();}
+                  
+    }//GEN-LAST:event_txtDayKeyTyped
+
+    private void txtMonthKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMonthKeyTyped
+        // TODO add your handling code here:
+        if(txtMonth.getText().length()>=2){
+            evt.consume();
+        }
+        char ch=evt.getKeyChar();
+        if (!(Character.isDigit(ch))){
+            evt.consume();}
+    }//GEN-LAST:event_txtMonthKeyTyped
+
+    private void txtYearKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtYearKeyTyped
+        // TODO add your handling code here:
+        if(txtYear.getText().length()>=4){
+            evt.consume();
+        }
+        char ch=evt.getKeyChar();
+        if (!(Character.isDigit(ch))){
+            evt.consume();}
+    }//GEN-LAST:event_txtYearKeyTyped
+
+    private void txtFirstNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFirstNameKeyTyped
+        // TODO add your handling code here:
+       char ch=evt.getKeyChar();
+        if (Character.isDigit(ch)){
+            evt.consume();}
+    }//GEN-LAST:event_txtFirstNameKeyTyped
+
+    private void txtLastNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLastNameKeyTyped
+        // TODO add your handling code here:
+        char ch=evt.getKeyChar();
+        if (Character.isDigit(ch)){
+            evt.consume();}
+    }//GEN-LAST:event_txtLastNameKeyTyped
+
+    private void txtNationalityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNationalityKeyTyped
+        // TODO add your handling code here:
+        char ch=evt.getKeyChar();
+        if (Character.isDigit(ch)){
+            evt.consume();}
+    }//GEN-LAST:event_txtNationalityKeyTyped
+
+    private void txtOccupationKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtOccupationKeyTyped
+        // TODO add your handling code here:
+        char ch=evt.getKeyChar();
+        if (Character.isDigit(ch)){
+            evt.consume();}
+    }//GEN-LAST:event_txtOccupationKeyTyped
+
+    public void changeGender(String title) {
+        switch (title) {
+            case "Mr.":
+                rbMale.isSelected();
+                break;
+            case "Mrs.":
+                rbFemale.isSelected();
+                break;
+        }
+    }
 
     /**
      * @param args the command line arguments
@@ -338,8 +477,6 @@ public class PersonalInformation extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton btnFemale;
-    private javax.swing.JRadioButton btnMale;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JComboBox cbxTitle;
     private javax.swing.JScrollPane jScrollPane1;
@@ -355,6 +492,8 @@ public class PersonalInformation extends javax.swing.JFrame {
     private javax.swing.JLabel lblYear;
     private javax.swing.JPanel pnlDetails;
     private javax.swing.JPanel pnlPersonalInformation;
+    private javax.swing.JRadioButton rbFemale;
+    private javax.swing.JRadioButton rbMale;
     private javax.swing.ButtonGroup rbnGender;
     private javax.swing.JTextField txtDay;
     private javax.swing.JTextField txtFirstName;

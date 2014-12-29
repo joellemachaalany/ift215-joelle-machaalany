@@ -72,7 +72,7 @@ public class main {
     
     public String getGen(){
         String gen;
-         if(title=="Male"){
+         if(gender=="Male"){
              gen="man";
          }  
          else{
@@ -87,17 +87,15 @@ public class main {
         age=2014-dateOfBirth;
         return age;
     }
-    
+        
     public String getPersonalInformation(){
         String personalInformation;
         
-        personalInformation="Hi,";
-        personalInformation+="I am "+ title + " "+ firstName + " " +lastName
-                +".";
-        personalInformation+="I am a "+ getAge()+ " years old " + getGen()+ " from " + 
-                nationality + ".";
-        personalInformation+="I work as a " + occupation ;
+        personalInformation="Hi,\n"+"I am "+ title + " "+ firstName + " " +lastName
+                +".\n"+"I am a "+ getAge()+ " years old " + getGen()+ " from " + 
+                nationality + ".\n"+"I work as a " + occupation +"." ;
+        
         return personalInformation;
-  
     }
+
 }
