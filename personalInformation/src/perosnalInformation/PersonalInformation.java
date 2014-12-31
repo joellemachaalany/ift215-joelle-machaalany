@@ -322,19 +322,19 @@ public class PersonalInformation extends javax.swing.JFrame {
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
         int value = Integer.parseInt(txtDay.getText().trim());
-        if ((value > 1) && (value < 31)) {
+        if ((value > 0) && (value < 32)) {
             txtDay.getText();
         } else {
             JOptionPane.showMessageDialog(this, "Please enter a day number between 1 and 31", "Error", JOptionPane.ERROR_MESSAGE);
         }
         int val = Integer.parseInt(txtMonth.getText().trim());
-        if ((val > 1) && (val < 12)) {
+        if ((val > 0) && (val < 13)) {
             txtMonth.getText();
         } else {
             JOptionPane.showMessageDialog(this, "Please enter a month number between 1 and 12", "Error", JOptionPane.ERROR_MESSAGE);
         }
         int value1 = Integer.parseInt(txtYear.getText().trim());
-        if ((value1 > 1900) && (value1 < 2100)) {
+        if ((value1 > 1899) && (value1 < 2101)) {
             txtYear.getText();
         } else {
             JOptionPane.showMessageDialog(this, "Please enter a year number between 1900 and 2100", "Error", JOptionPane.ERROR_MESSAGE);
