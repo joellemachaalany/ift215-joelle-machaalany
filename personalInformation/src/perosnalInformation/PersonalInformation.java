@@ -375,22 +375,17 @@ public class PersonalInformation extends javax.swing.JFrame {
 
     private void cbxTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxTitleActionPerformed
         // TODO add your handling code here:
-       
-       
+
         if (cbxTitle.getSelectedItem().equals("Mr.")) {
             rbMale.setSelected(true);
-            
-        }
 
-        else {
+        } else {
             rbFemale.setSelected(false);
         }
-         if (cbxTitle.getSelectedItem().equals("Mrs.")) {
+        if (cbxTitle.getSelectedItem().equals("Mrs.")) {
             rbFemale.setSelected(true);
-            
-        }
 
-        else {
+        } else {
             rbMale.setSelected(false);
         }
     }//GEN-LAST:event_cbxTitleActionPerformed
@@ -473,27 +468,10 @@ public class PersonalInformation extends javax.swing.JFrame {
 
     private void cbxTitleKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cbxTitleKeyPressed
         // TODO add your handling code here:
-        if (cbxTitle.toString().equals("Mr.")){
-            rbMale.isSelected();
-            
-        }
-
-        else{
-            rbFemale.isSelected();
-            
-        }
+       
     }//GEN-LAST:event_cbxTitleKeyPressed
 
-    public void changeGender(String title) {
-        switch (title) {
-            case "Mr.":
-                rbMale.isSelected();
-                break;
-            case "Mrs.":
-                rbFemale.isSelected();
-                break;
-        }
-    }
+   
 
     /**
      * @param args the command line arguments
