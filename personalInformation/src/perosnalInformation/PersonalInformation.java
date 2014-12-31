@@ -378,11 +378,20 @@ public class PersonalInformation extends javax.swing.JFrame {
        
        
         if (cbxTitle.getSelectedItem().equals("Mr.")) {
-            rbMale.isSelected();
+            rbMale.setSelected(true);
+            
         }
 
         else {
-            rbFemale.isSelected();
+            rbFemale.setSelected(false);
+        }
+         if (cbxTitle.getSelectedItem().equals("Mrs.")) {
+            rbFemale.setSelected(true);
+            
+        }
+
+        else {
+            rbMale.setSelected(false);
         }
     }//GEN-LAST:event_cbxTitleActionPerformed
 
@@ -464,13 +473,14 @@ public class PersonalInformation extends javax.swing.JFrame {
 
     private void cbxTitleKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cbxTitleKeyPressed
         // TODO add your handling code here:
-        if (cbxTitle.toString().equals("Mr.")) {
+        if (cbxTitle.toString().equals("Mr.")){
             rbMale.isSelected();
-
+            
         }
 
-        if (cbxTitle.toString().equals("Mrs.")) {
+        else{
             rbFemale.isSelected();
+            
         }
     }//GEN-LAST:event_cbxTitleKeyPressed
 
